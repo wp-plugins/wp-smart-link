@@ -4,7 +4,7 @@
  * Description: An intelligent and powerful widget and shortcode that create links with amazingly little input.
  * Author: Carlo Manf
  * Author URI: http://carlomanf.id.au
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 // The brains...
@@ -20,20 +20,24 @@ function smart_link( $instance ) {
 	}
 
 	// Try the post ID or slug next
-	if ( intval( $instance[ 'post' ] ) )
-		$post_id = $instance[ 'post' ];
-	else {
-		$post = get_posts( array( 'name' => $instance[ 'post' ] ) );
-		if ( $post )
-			$post_id = $post[ 0 ]->ID;
-	}
+	if ( !empty( $instance[ 'post' ] ) ) {
 
-	if ( empty( $url ) && !empty( $post_id ) ) {
-		$url = get_permalink( $post_id );
+		// Try the post ID, or else the slug
+		if ( intval( $instance[ 'post' ] ) )
+			$post_id = $instance[ 'post' ];
+		else {
+			$post = get_posts( array( 'name' => $instance[ 'post' ], 'post_type' => 'any' ) );
+			if ( $post )
+				$post_id = $post[ 0 ]->ID;
+		}
 
-		// Easter egg!
-		if ( !empty( $url ) && empty( $instance[ 'text' ] ) )
-			$instance[ 'text' ] = get_the_title( $post_id );
+		if ( empty( $url ) && !empty( $post_id ) ) {
+			$url = get_permalink( $post_id );
+
+			// Easter egg
+			if ( !empty( $url ) && empty( $instance[ 'text' ] ) )
+				$instance[ 'text' ] = get_the_title( $post_id );
+		}
 	}
 
 	// Try the custom URL last
