@@ -28,25 +28,25 @@ All the fields are optional; just enter the necessary information and WP Smart L
 
 The shortcode is designed to be used within the content of a Post or Page. The supported attributes are the same as the widget fields:
 
-`field`: The name of a custom field that contains the link.
+**field**: The name of a custom field that contains the link.
 
 `[smart_link field="related_url"]`
 
-`post`: The ID or the slug of a Post or Page you want to link to.
+**post**: The ID or the slug of a Post or Page you want to link to.
 
 `[smart_link post="200"]`
 
 `[smart_link post="hello-world"]`
 
-`url`: The exact URL that you want to link to. It can be on your own website or an external link.
+**url**: The exact URL that you want to link to. It can be on your own website or an external link.
 
 `[smart_link url="https://wordpress.org/plugins/wp-smart-link/"]`
 
-`text`: Your desired anchor text for the link.
+**text**: Your desired anchor text for the link.
 
 `[smart_link text="Click Here"]`
 
-`class`: An HTML class you want to apply to the link.
+**class**: An HTML class you want to apply to the link.
 
 `[smart_link class="button"]`
 
