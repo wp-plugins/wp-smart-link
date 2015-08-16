@@ -4,7 +4,7 @@
  * Description: An intelligent and powerful widget and shortcode that create links with amazingly little input.
  * Author: Carlo Manf
  * Author URI: http://carlomanf.id.au
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 
 // The brains...
@@ -88,9 +88,10 @@ class Smart_Link extends WP_Widget {
 }
 
 // Register the widget
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', 'smart_link_register' );
+function smart_link_register() {
 	register_widget( 'Smart_Link' );
-} );
+}
 
 // Register and describe the shortcode
 add_shortcode( 'smart_link', 'smart_link_shortcode' );

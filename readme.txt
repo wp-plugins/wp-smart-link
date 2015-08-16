@@ -61,3 +61,6 @@ You can mix and match the attributes and WP Smart Link will figure out what kind
 
 = 1.0.1 =
 * Fixes a bug
+
+= 1.0.2 =
+* Add compatibility for older PHP versions
