@@ -54,6 +54,10 @@ You can mix and match the attributes and WP Smart Link will figure out what kind
 
 `[smart_link post="hello-world" text="Click Here" class="button"]`
 
+== Screenshots ==
+
+1. WP Smart Link widget
+
 == Changelog ==
 
 = 1.0.0 =
